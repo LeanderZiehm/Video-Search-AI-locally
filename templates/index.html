@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Keyword Search</title>
+  <script src="{{ url_for('static', filename='videoKeywordsData.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div id="filters">
+      <label for="fps-filter">FPS:</label>
+      <select id="fps-filter">
+        <option value="">All</option>
+      </select>
+      <label for="ratio-filter">Ratio:</label>
+      <select id="ratio-filter">
+        <option value="">All</option>
+      </select>
+  <div>
+    <label for="minDate">Min Date:</label>
+    <input type="date" id="minDate" class="date-input" />
+  </div>
+
+      <div>
+        <label for="maxDate">Max Date:</label>
+        <input type="date" id="maxDate" class="date-input" />
+  
+      </div>
+
+      <div>
+        <label for="path-filter">Path:</label>
+        <select id="path-filter">
+          <option value="">All</option>
+        </select>
+      </div>
+
+
+      <!-- <a id="editHistory" href="/editHistory"><img src="{{ url_for('static', filename='editHistory.png') }}" alt="Edit History" /> </a> -->
+
+    </div>
+
+    
+
+
+    <input type="text" id="search-bar" placeholder="Search for captions..." />
+
+    <label for="strict-search">Strict Search</label>
+    <input type="checkbox" id="strict-search" name="strict-search" value="strict-search" />
+
+    <label for="match-in-path">Match in Path</label>
+    <input type="checkbox" id="match-in-path" name="match-in-path" value="match-in-path" />
+
+
+    <div id="keywordsToSearch"></div>
+
+    <label id="pageVideoCount">pageVideoConunt NOT ASSIGNED</label>
+
+    <!-- <button id="edit-selected-videos-keywords-btn">Edit Selected</button> -->
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 300px">
+            Thumbnail
+            <div class="resize-handle"></div>
+          </th>
+          <th style="width: 600px">
+            Keywords
+            <div class="resize-handle"></div>
+          </th>
+
+          <th id="edit-th">
+            Edit
+            <div class="resize-handle"></div>
+          </th>
+
+          <th data-sort="date">
+            Date Created
+            <div class="resize-handle"></div>
+          </th>
+          <th data-sort="length">
+            Length (s)
+            <div class="resize-handle"></div>
+          </th>
+          <th data-sort="size">
+            Size (MB)
+            <div class="resize-handle"></div>
+          </th>
+          <th data-sort="ratio">
+            Ratio
+            <div class="resize-handle"></div>
+          </th>
+          <th data-sort="fps">
+            FPS
+            <div class="resize-handle"></div>
+          </th>
+
+          <th data-sort="clicks">
+            Clicks
+            <div class="resize-handle"></div>
+          </th>
+
+
+          <th data-sort="votes">
+            Votes
+            <div class="resize-handle"></div>
+          </th>
+
+        </tr>
+      </thead>
+      <tbody id="video-results"></tbody>
+    </table>
+  </div>
+
+  <div id="loadMore">Displaying X out of Y videos</div>
+
+  <div id="editKeywordsWindow"></div>
+
+  <script src="{{ url_for('static', filename='js/dataManager.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/videoRow.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/headerInputs.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/videoKeywords.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/keyboardShortcuts.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/editKeywordsWindow.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,428 @@
+:root {
+  --blue: rgb(41, 121, 255);
+  --white: #ffffff;
+  --orange: rgb(255, 165, 0);
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+
+  /* padding: 40px; */
+}
+
+
+input,
+select{
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+input,
+select,
+button {
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #444;
+  color: white;
+  border: none;
+}
+
+
+.keywordContainerSingle {
+  display: flex; /* Flexbox layout for horizontal alignment */
+  align-items: center; /* Vertically aligns items */
+  gap: 8px; /* Optional: Adds space between items */
+}
+
+
+
+button:hover {
+  background-color: #666;
+}
+
+.circle-btn {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 0px;
+  /* margin-left: 5px; */
+  cursor: pointer;
+
+  display: flex; /* Enables flexbox layout */
+  align-items: center; /* Vertically centers content */
+  justify-content: center; /* Horizontally centers content */
+
+
+}
+.circle-btn span {
+  display: block;
+}
+
+.container {
+  width: 95%;
+  /* margin: 0 auto; */
+}
+
+#search-bar {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+}
+#search-bar:focus {
+  outline: none;
+  border: 1px solid var(--blue);
+  box-shadow: 0 0 20px var(--blue);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+th:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* #edit-th { */
+  /* background-color: rgb(0, 153, 255); */
+  /* border: none; */
+/* } */
+
+.breathingHighlight {
+  background-color: rgb(0, 153, 255);
+  border: none;
+  animation: breathe 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+
+
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1); /* Start at normal size */
+  }
+  50% {
+    transform: scale(1.1); /* Grow to 110% of original size */
+  }
+}
+/* rgb(0, 153, 255); */
+
+th[data-sort],
+th[data-sort="date"],
+th[data-sort="length"],
+th[data-sort="size"],
+th[data-sort="ratio"],
+th[data-sort="fps"],
+th[data-sort="clicks"],
+th[data-sort="votes"]  {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+th[data-sort="date"]:hover,
+th[data-sort="length"]:hover,
+th[data-sort="size"]:hover,
+th[data-sort="ratio"]:hover,
+th[data-sort="fps"]:hover,
+th[data-sort="clicks"]:hover,
+th[data-sort="votes"]:hover,
+#edit-th:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+
+td img {
+  width: 100%;
+  border-radius: 10px;
+}
+.thumbnail {
+  min-width: 600px;
+  cursor: pointer;
+}
+
+.keyword-capsule {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.keyword-capsule-edit{
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  position: relative;
+}
+.keyword-capsule-edit span {
+  margin-right: 20px;
+  font-size: 20px;
+  /* font-weight: bold; */
+}
+
+.blue-hover:hover {
+  background-color: var(--blue);
+}
+
+.remove-keyword-btn{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: white;
+  border: none;
+  border-radius: 100%;
+
+  padding: 5px;
+  cursor: pointer;
+  /* margin-left: 10px; */
+
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 10px;  
+  margin: 5px;
+
+  /* font-weight: bold; */
+
+}
+
+#new-keyword{
+  margin-top: 10px;
+  width: 80%;
+}
+
+
+#close-keywords-btn{
+  margin: 5px;
+  width: 35px;
+}
+
+.remove-keyword-btn:hover{
+  background-color: red;
+
+}
+
+.save-unsaved-changes{
+  background-color: rgb(13, 177, 48);
+}
+.save-unsaved-changes:hover{
+  background-color: rgb(19, 133, 44);
+}
+
+
+
+
+
+.pathDisplay {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.no-results {
+  color: red;
+  font-size: 18px;
+}
+
+.edit-keywords-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  padding: 20px 50px;
+  border-radius: 10px;
+  z-index: 1000;
+  min-width: 50%;
+}
+
+.edit-keywords-modal input {
+  margin-right: 10px;
+}
+
+.edit-keywords-modal h3{
+  margin-left: 40%;
+}
+
+
+
+#editKeywordsWindow {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+th {
+  position: relative;
+
+  user-select: none;
+}
+
+.resize-handle {
+  position: absolute;
+  width: 5px;
+
+  top: 0;
+  right: 0;
+
+  cursor: col-resize;
+
+  height: 100%;
+  z-index: 1;
+}
+
+#keywordsToSearch {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+#keywordsToSearch div {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.selected-video-row {
+  background-color: rgba(0, 153, 255, 0.493);
+}
+.highlighted {
+  background-color: rgb(0, 153, 255);
+  color: rgba(0, 0, 0, 0.6);
+}
+.keywordsContainer {
+  /* width: 30vw; */
+}
+
+#activeSortingHeader {
+  background-color: rgba(255, 255, 255, 0.349);
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+#activeSortingHeader:hover {
+  background-color: var(--blue);
+}
+
+.ascending::after {
+  content: "\A ▲"; /* Use \A for a line break */
+  white-space: pre; /* Enable line breaks in content */
+}
+
+.descending::after {
+  content: "\A ▼";
+  white-space: pre;
+}
+
+#loadMore {
+  display: flex;
+  justify-content: center; /* Centers the span horizontally inside #loadMore */
+  align-items: center; /* Centers the span vertically inside #loadMore */
+
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: fit-content; /* Optional: Adjusts the width to fit the content */
+  margin: auto; /* Optional: To center #loadMore within its container if needed */
+}
+
+#loadMore span {
+  text-align: center; /* Ensures the text within the span is centered */
+}
+/* #edit-selected-videos-keywords-btn {
+  float: right;
+  margin-right: 26%;
+  margin-bottom: 20px;
+} */
+
+/* stack them on top of each other in 1 column */
+.voteContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upvote, .downvote{
+  margin: 10px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  fill: white;
+}
+
+
+.upvote:hover{
+  fill: rgb(0, 255, 149);
+}
+
+
+.downvote:hover{
+  fill: rgb(255, 0, 0);
+}
+.voteNumber{
+  user-select: none;
+}
+
+#editHistory{
+  float: right;
+  top: 0px;
+  /* position: absolute;
+  top: 20px;
+  right: 20px; */
+}
+#editHistory img{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+#filters div {
+  /* inline */
+  display: inline-block;
+}
+
+
+
+/* .clicks{
+
+} */

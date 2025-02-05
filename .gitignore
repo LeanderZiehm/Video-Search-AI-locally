@@ -1,0 +1,18 @@
+*.bat
+/static/processed
+/static/processed2
+
+__pycache__
+info_log.txt
+error_log.txt
+
+/old
+/_old
+templates/indexListView copy.html
+/static/processedOLD
+static/js/x.json
+usageLoggs.txt
+templates/editKeywords copy.html
+clicksLoggs.txt
+clicksLoggs.txt
+/videos
