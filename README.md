@@ -28,7 +28,6 @@ Developed as part of a marketing internship 🎓 to help the marketing departmen
    ```
 
 4. **Prepare video folder**  
-   - Create a `video/` folder inside the project directory.  
    - Place your videos inside the `video/` folder.
 
 5. **Install Python (if not installed)**  
