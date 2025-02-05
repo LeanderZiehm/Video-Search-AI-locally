@@ -2,7 +2,6 @@ from flask import Flask, render_template, jsonify, request
 import json
 import os
 from datetime import datetime
-import socket
 
 app = Flask(__name__)
 videoKeywordChangesPath = 'static/videoKeywordChanges.json'
@@ -87,10 +86,8 @@ def saveClicksAndVotes():
 
 
 if __name__ == '__main__':
-    hostname = socket.gethostname()
-    current_ip = socket.gethostbyname(hostname)
     port = 5000  # Default port Flask uses
-    url = f"http://{current_ip}:{port}"
+    url = f"http://127.0.0.1:{port}"
     os.system(f"start {url}")
 
     app.run(host="0.0.0.0", port=5000)
