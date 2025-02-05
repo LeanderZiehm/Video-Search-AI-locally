@@ -36,6 +36,7 @@ Developed as part of a marketing internship 🎓 to help the marketing departmen
 6. **Install dependencies**  
    ```bash
    pip install -r requirements.txt
+   pip install -r requirements2.txt
    ```
 
 ### Running the Application:
